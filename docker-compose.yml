@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api-task-manager:
+    build: .
+    network_mode: "host"
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    environment:
+      FLASK_ENV: development
+        FLASK_APP=main.py
+        FLASK_RUN_HOST=0.0.0.0
